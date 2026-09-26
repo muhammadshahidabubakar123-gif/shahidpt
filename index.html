@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShahidTheMarketer | Affiliate Marketing Partner</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #050507;
+      --bg2: #0b0b10;
+      --card: rgba(255,255,255,0.055);
+      --border: rgba(255,255,255,0.1);
+      --text: #ffffff;
+      --muted: #a7a7b5;
+      --accent: #8b5cf6;
+      --accent2: #00e5ff;
+      --green: #22c55e;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(139,92,246,.16), transparent 30%),
+        radial-gradient(circle at 80% 20%, rgba(0,229,255,.10), transparent 30%),
+        var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* NAVBAR */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 20px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(5,5,7,.72);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,.05);
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: var(--accent2);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #cfcfd8;
+      font-size: 14px;
+      transition: .3s;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .nav-cta {
+      padding: 11px 18px;
+      border-radius: 30px;
+      background: linear-gradient(90deg, var(--accent), #6366f1);
+      font-weight: 700;
+      color: white !important;
+    }
+
+    .menu {
+      display: none;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      padding: 160px 7% 100px;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 60px;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 750px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 15px;
+      border: 1px solid rgba(0,229,255,.25);
+      background: rgba(0,229,255,.06);
+      border-radius: 50px;
+      color: #9ff5ff;
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      background: #22c55e;
+      border-radius: 50%;
+      box-shadow: 0 0 12px #22c55e;
+    }
+
+    h1 {
+      font-size: clamp(52px, 7vw, 95px);
+      line-height: .94;
+      letter-spacing: -5px;
+      margin-bottom: 28px;
+    }
+
+    h1 .gradient {
+      background: linear-gradient(90deg, #fff, #9c7cff, #00e5ff);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-description {
+      color: var(--muted);
+      max-width: 620px;
+      line-height: 1.8;
+      font-size: 18px;
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 15px 24px;
+      border-radius: 12px;
+      font-weight: 800;
+      transition: .3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .primary {
+      background: linear-gradient(90deg, var(--accent), #6366f1);
+      box-shadow: 0 15px 45px rgba(139,92,246,.25);
+    }
+
+    .primary:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(139,92,246,.4);
+    }
+
+    .secondary {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+    }
+
+    .secondary:hover {
+      background: rgba(255,255,255,.08);
+    }
+
+    /* HERO VISUAL */
+
+    .hero-visual {
+      position: relative;
+      height: 550px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .orb {
+      width: 330px;
+      height: 330px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 35% 30%, #fff, #9c7cff 8%, #6d28d9 35%, #080810 70%);
+      box-shadow:
+        0 0 80px rgba(139,92,246,.35),
+        0 0 180px rgba(0,229,255,.08);
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .orb-ring {
+      position: absolute;
+      width: 440px;
+      height: 440px;
+      border: 1px solid rgba(139,92,246,.3);
+      border-radius: 50%;
+      transform: rotate(25deg) skewX(-12deg);
+      animation: spin 15s linear infinite;
+    }
+
+    .orb-ring2 {
+      position: absolute;
+      width: 520px;
+      height: 180px;
+      border: 1px solid rgba(0,229,255,.25);
+      border-radius: 50%;
+      transform: rotate(-25deg);
+      animation: spinReverse 12s linear infinite;
+    }
+
+    .floating-card {
+      position: absolute;
+      padding: 18px;
+      background: rgba(13,13,20,.82);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 18px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.4);
+    }
+
+    .card-top {
+      top: 55px;
+      right: 0;
+    }
+
+    .card-bottom {
+      bottom: 55px;
+      left: 0;
+    }
+
+    .stat-number {
+      font-size: 27px;
+      font-weight: 900;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 5px;
+    }
+
+    /* TRUST BAR */
+
+    .trust {
+      padding: 35px 7%;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .trust p {
+      color: #777784;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+    }
+
+    .trust-items {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+      color: #bcbcc7;
+      font-weight: 800;
+      font-size: 18px;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 110px 7%;
+    }
+
+    .section-label {
+      color: var(--accent2);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: clamp(38px, 5vw, 65px);
+      letter-spacing: -3px;
+      max-width: 800px;
+      line-height: 1;
+      margin-bottom: 22px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      max-width: 650px;
+      line-height: 1.8;
+      margin-bottom: 55px;
+    }
+
+    /* SERVICES */
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      padding: 35px;
+      min-height: 280px;
+      background: linear-gradient(145deg, rgba(255,255,255,.07), rgba(255,255,255,.025));
+      border: 1px solid var(--border);
+      border-radius: 25px;
+      transition: .4s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      background: var(--accent);
+      filter: blur(90px);
+      opacity: .12;
+      top: -60px;
+      right: -60px;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(139,92,246,.4);
+    }
+
+    .icon {
+      width: 55px;
+      height: 55px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      background: rgba(139,92,246,.13);
+      font-size: 25px;
+      margin-bottom: 30px;
+    }
+
+    .service-card h3 {
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    /* PROCESS */
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 15px;
+    }
+
+    .process-card {
+      border-left: 1px solid var(--border);
+      padding: 25px;
+    }
+
+    .number {
+      font-size: 50px;
+      font-weight: 900;
+      color: rgba(255,255,255,.12);
+      margin-bottom: 20px;
+    }
+
+    .process-card h3 {
+      margin-bottom: 12px;
+    }
+
+    .process-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* RESULTS */
+
+    .results {
+      background:
+        radial-gradient(circle at center, rgba(139,92,246,.13), transparent 55%);
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .metric {
+      padding: 40px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.035);
+      border-radius: 22px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 55px;
+      letter-spacing: -3px;
+      margin-bottom: 10px;
+    }
+
+    .metric span {
+      color: var(--muted);
+    }
+
+    /* CTA */
+
+    .cta {
+      text-align: center;
+    }
+
+    .cta-box {
+      position: relative;
+      overflow: hidden;
+      padding: 90px 30px;
+      border: 1px solid rgba(139,92,246,.3);
+      border-radius: 35px;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(139,92,246,.25), transparent 45%),
+        rgba(255,255,255,.035);
+    }
+
+    .cta-box h2 {
+      font-size: clamp(40px,6vw,75px);
+      letter-spacing: -4px;
+      margin-bottom: 20px;
+    }
+
+    .cta-box p {
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 35px;
+      line-height: 1.7;
+    }
+
+    /* CONTACT */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 50px;
+    }
+
+    .contact-info h2 {
+      font-size: 45px;
+      letter-spacing: -2px;
+      margin-bottom: 20px;
+    }
+
+    .contact-info p {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 15px;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      background: rgba(255,255,255,.045);
+      border: 1px solid var(--border);
+      color: white;
+      padding: 16px;
+      border-radius: 12px;
+      outline: none;
+      font: inherit;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--accent);
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    option {
+      background: #111118;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 35px 7%;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: #777784;
+      font-size: 13px;
+    }
+
+    /* ANIMATIONS */
+
+    @keyframes float {
+      0%,100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg) skewX(-12deg);
+      }
+      to {
+        transform: rotate(360deg) skewX(-12deg);
+      }
+    }
+
+    @keyframes spinReverse {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(-360deg);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: 1s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* MOBILE */
+
+    @media(max-width: 900px) {
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 5%;
+        right: 5%;
+        padding: 25px;
+        background: rgba(10,10,15,.95);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        flex-direction: column;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu {
+        display: block;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 140px;
+      }
+
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-visual {
+        height: 430px;
+      }
+
+      .orb {
+        width: 260px;
+        height: 260px;
+      }
+
+      .orb-ring {
+        width: 350px;
+        height: 350px;
+      }
+
+      .orb-ring2 {
+        width: 400px;
+      }
+
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      .process {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media(max-width: 600px) {
+
+      h1 {
+        letter-spacing: -3px;
+      }
+
+      section {
+        padding: 80px 6%;
+      }
+
+      .process {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-items {
+        gap: 25px;
+      }
+
+      .floating-card {
+        transform: scale(.85);
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <a href="#home" class="logo">
+      Shahid<span>TheMarketer</span>
+    </a>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#process">How It Works</a>
+      <a href="#results">Capabilities</a>
+      <a href="#contact" class="nav-cta">Work With Shahid</a>
+    </div>
+
+    <div class="menu" id="menuBtn">☰</div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <main id="home">
+
+    <section class="hero">
+
+      <div class="hero-content reveal">
+
+        <div class="badge">
+          <span class="dot"></span>
+          Available for Affiliate Partnerships
+        </div>
+
+        <h1>
+          Turn attention into
+          <span class="gradient">revenue.</span>
+        </h1>
+
+        <p class="hero-description">
+          I'm <strong>ShahidTheMarketer</strong> — an affiliate marketer
+          helping organizations connect their products with the right
+          audiences through strategic promotion, content and performance-focused
+          marketing.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#contact" class="btn primary">
+            Partner With Me →
+          </a>
+
+          <a href="#services" class="btn secondary">
+            Explore Services
+          </a>
+        </div>
+
+      </div>
+
+
+      <div class="hero-visual reveal">
+
+        <div class="orb"></div>
+        <div class="orb-ring"></div>
+        <div class="orb-ring2"></div>
+
+        <div class="floating-card card-top">
+          <div class="stat-number">Affiliate</div>
+          <div class="stat-label">Marketing Partner</div>
+        </div>
+
+        <div class="floating-card card-bottom">
+          <div class="stat-number">↗ Growth</div>
+          <div class="stat-label">Performance-focused campaigns</div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- TRUST -->
+
+    <div class="trust">
+
+      <p>Built for organizations seeking performance-driven promotion</p>
+
+      <div class="trust-items">
+        <span>Digital Products</span>
+        <span>Education</span>
+        <span>Technology</span>
+        <span>E-commerce</span>
+        <span>Online Services</span>
+      </div>
+
+    </div>
+
+
+    <!-- SERVICES -->
+
+    <section id="services">
+
+      <div class="reveal">
+        <div class="section-label">What I Do</div>
+
+        <h2 class="section-title">
+          Affiliate marketing built around growth.
+        </h2>
+
+        <p class="section-subtitle">
+          Organizations can work with ShahidTheMarketer to promote products,
+          reach new audiences and build consistent awareness through digital
+          marketing channels.
+        </p>
+      </div>
+
+
+      <div class="services">
+
+        <div class="service-card reveal">
+          <div class="icon">📣</div>
+          <h3>Product Promotion</h3>
+          <p>
+            Strategic promotion of products and services through relevant
+            digital audiences and marketing campaigns.
+          </p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="icon">🎯</div>
+          <h3>Audience Targeting</h3>
+          <p>
+            Connect products with audiences that are more likely to be
+            interested in the offer and its value.
+          </p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="icon">📱</div>
+          <h3>Content Marketing</h3>
+          <p>
+            Create marketing content designed to educate audiences, generate
+            interest and encourage meaningful action.
+          </p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="icon">🚀</div>
+          <h3>Campaign Growth</h3>
+          <p>
+            Develop promotional approaches that can be tested, improved and
+            scaled as campaign performance develops.
+          </p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="icon">🔗</div>
+          <h3>Affiliate Partnerships</h3>
+          <p>
+            Work directly with organizations looking for affiliate marketers
+            to expand their product distribution.
+          </p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="icon">📊</div>
+          <h3>Performance Focus</h3>
+          <p>
+            Focus campaigns around measurable actions such as clicks,
+            registrations, leads and conversions.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROCESS -->
+
+    <section id="process">
+
+      <div class="reveal">
+
+        <div class="section-label">The Process</div>
+
+        <h2 class="section-title">
+          From product to promotion.
+        </h2>
+
+        <p class="section-subtitle">
+          A simple workflow designed to make collaboration clear for
+          organizations and brands.
+        </p>
+
+      </div>
+
+
+      <div class="process">
+
+        <div class="process-card reveal">
+          <div class="number">01</div>
+          <h3>Discover</h3>
+          <p>
+            Understand the organization, product, audience and affiliate
+            objectives.
+          </p>
+        </div>
+
+        <div class="process-card reveal">
+          <div class="number">02</div>
+          <h3>Strategize</h3>
+          <p>
+            Develop a promotional approach suitable for the product and
+            target audience.
+          </p>
+        </div>
+
+        <div class="process-card reveal">
+          <div class="number">03</div>
+          <h3>Promote</h3>
+          <p>
+            Put the campaign in front of relevant audiences using digital
+            content and promotion.
+          </p>
+        </div>
+
+        <div class="process-card reveal">
+          <div class="number">04</div>
+          <h3>Optimize</h3>
+          <p>
+            Review campaign performance and improve the promotional strategy
+            over time.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CAPABILITIES -->
+
+    <section id="results" class="results">
+
+      <div class="reveal">
+
+        <div class="section-label">Capabilities</div>
+
+        <h2 class="section-title">
+          Marketing designed to move products forward.
+        </h2>
+
+        <p class="section-subtitle">
+          A prototype representation of the types of outcomes and campaign
+          activities ShahidTheMarketer can focus on.
+        </p>
+
+      </div>
+
+
+      <div class="metrics">
+
+        <div class="metric reveal">
+          <strong>01</strong>
+          <span>Affiliate strategy</span>
+        </div>
+
+        <div class="metric reveal">
+          <strong>02</strong>
+          <span>Digital promotion</span>
+        </div>
+
+        <div class="metric reveal">
+          <strong>03</strong>
+          <span>Performance optimization</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+      <div class="cta-box reveal">
+
+        <h2>
+          Have a product
+          <span class="gradient">worth promoting?</span>
+        </h2>
+
+        <p>
+          Let's explore how ShahidTheMarketer can help introduce your product
+          to relevant audiences through affiliate marketing.
+        </p>
+
+        <a href="#contact" class="btn primary">
+          Start a Conversation →
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+      <div class="contact-grid">
+
+        <div class="contact-info reveal">
+
+          <div class="section-label">Let's Connect</div>
+
+          <h2>
+            Let's discuss your affiliate opportunity.
+          </h2>
+
+          <p>
+            If your organization is looking for an affiliate marketer,
+            partnership opportunity or product promoter, send the details
+            below.
+          </p>
+
+        </div>
+
+
+        <form class="contact-form reveal" id="contactForm">
+
+          <input
+            type="text"
+            id="name"
+            placeholder="Your name"
+            required
+          />
+
+          <input
+            type="email"
+            id="email"
+            placeholder="Business email"
+            required
+          />
+
+          <input
+            type="text"
+            id="company"
+            placeholder="Organization / Company"
+          />
+
+          <select id="service">
+            <option value="">What are you looking for?</option>
+            <option>Affiliate Marketer</option>
+            <option>Product Promotion</option>
+            <option>Affiliate Partnership</option>
+            <option>Digital Marketing</option>
+          </select>
+
+          <textarea
+            id="message"
+            placeholder="Tell Shahid about your product or opportunity..."
+            required
+          ></textarea>
+
+          <button class="btn primary" type="submit">
+            Send Partnership Request →
+          </button>
+
+        </form>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div>
+      © <span id="year"></span> ShahidTheMarketer
+    </div>
+
+    <div>
+      Affiliate Marketing • Digital Promotion • Growth
+    </div>
+
+  </footer>
+
+
+  <script>
+
+    // MOBILE MENU
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+
+    // CLOSE MOBILE MENU AFTER CLICKING
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+      });
+    });
+
+
+    // SCROLL REVEAL ANIMATION
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            revealObserver.unobserve(entry.target);
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+    revealElements.forEach(element => {
+      revealObserver.observe(element);
+    });
+
+
+    // CONTACT FORM DEMO
+
+    const contactForm = document.getElementById("contactForm");
+
+    contactForm.addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+
+      alert(
+        `Thanks ${name}! Your partnership request has been received in this prototype.`
+      );
+
+      contactForm.reset();
+
+    });
+
+
+    // CURRENT YEAR
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+
+    // SMALL MOUSE PARALLAX EFFECT
+
+    const orb = document.querySelector(".orb");
+
+    document.addEventListener("mousemove", (event) => {
+
+      const x = (window.innerWidth / 2 - event.clientX) / 70;
+      const y = (window.innerHeight / 2 - event.clientY) / 70;
+
+      orb.style.transform =
+        `translate(${x}px, ${y}px)`;
+
+    });
+
+  </script>
+
+</body>
+</html>
